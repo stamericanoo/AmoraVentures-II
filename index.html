@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amora Ventures | Sulfuric Acid Plant</title>
+
+<style>
+
+/* ===============================
+GLOBAL STYLE
+=================================*/
+
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:#0b1023;
+    color:white;
+    scroll-behavior:smooth;
+}
+
+section{
+    padding:120px 8%;
+}
+
+h1,h2,h3{
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:60px;
+    background:linear-gradient(90deg,#ff3d68,#ff7b9c);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+h2{
+    font-size:38px;
+    color:#ff4f75;
+}
+
+h3{
+    font-size:22px;
+    color:#ffc2d1;
+}
+
+p{
+    line-height:1.7;
+    font-size:18px;
+    opacity:0.9;
+}
+
+.card{
+    background:linear-gradient(145deg,#121a3a,#0e1430);
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
+    margin-bottom:40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.highlight{
+    color:#ff4f75;
+    font-weight:bold;
+}
+
+.timeline{
+    border-left:3px solid #ff4f75;
+    padding-left:30px;
+}
+
+.timeline-item{
+    margin-bottom:60px;
+    position:relative;
+}
+
+.timeline-item::before{
+    content:'';
+    width:16px;
+    height:16px;
+    background:#ff4f75;
+    border-radius:50%;
+    position:absolute;
+    left:-40px;
+    top:5px;
+}
+
+/* Graph Canvas */
+canvas{
+    background:#121a3a;
+    border-radius:15px;
+    padding:20px;
+}
+
+footer{
+    background:#050817;
+    padding:60px 8%;
+    text-align:center;
+}
+
+.footer-team{
+    font-size:20px;
+    letter-spacing:1px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+<section>
+<h1>Amora Ventures</h1>
+<h3>Sulfuric Acid Plant Design – 1000 Ton/Day Capacity</h3>
+<p>
+This project presents a comprehensive industrial design for a modern 
+Contact Process sulfuric acid plant, integrating thermodynamic optimization,
+economic feasibility, and operational safety.
+</p>
+</section>
+
+<!-- EXECUTIVE SUMMARY -->
+<section>
+<h2>Executive Summary</h2>
+<div class="grid">
+<div class="card">
+<h3>Plant Capacity</h3>
+<p>1000 tons H₂SO₄ per day</p>
+</div>
+<div class="card">
+<h3>Annual Production</h3>
+<p>330,000 tons/year</p>
+</div>
+<div class="card">
+<h3>Total Capital Investment</h3>
+<p>Rp 1.127 Trillion</p>
+</div>
+<div class="card">
+<h3>Payback Period</h3>
+<p>≈ 10.3 Years</p>
+</div>
+</div>
+</section>
+
+<!-- PROCESS OVERVIEW -->
+<section>
+<h2>Process Overview</h2>
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>1. Sulfur Burning Furnace</h3>
+<p>
+Sulfur is combusted in dry air producing SO₂. 
+Highly exothermic reaction releases -296 kJ/mol.
+Operating temperature: 900–1100°C.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>2. Gas Cleaning & Drying</h3>
+<p>
+Removal of particulates and moisture using electrostatic precipitators 
+and drying towers to protect catalyst activity.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>3. Catalytic Converter</h3>
+<p>
+SO₂ oxidized to SO₃ using V₂O₅ catalyst at 420–450°C. 
+Equilibrium carefully controlled for maximum yield.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>4. Absorption Tower</h3>
+<p>
+SO₃ absorbed in concentrated H₂SO₄ to form oleum.
+Direct water absorption avoided to prevent acid mist formation.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>5. Dilution Section</h3>
+<p>
+Oleum diluted under temperature control to produce 
+commercial-grade sulfuric acid.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- ECONOMIC ANALYSIS -->
+<section>
+<h2>Economic Analysis</h2>
+
+<div class="card">
+<h3>Revenue</h3>
+<p>Rp 660 Billion / year</p>
+</div>
+
+<div class="card">
+<h3>Total Production Cost</h3>
+<p>Rp 538.8 Billion / year</p>
+</div>
+
+<div class="card">
+<h3>Net Profit</h3>
+<p class="highlight">Rp 94.5 Billion / year</p>
+</div>
+
+</section>
+
+<!-- BEP GRAPH -->
+<section>
+<h2>Break Even Analysis</h2>
+<canvas id="bepChart" height="120"></canvas>
+</section>
+
+<!-- CASHFLOW -->
+<section>
+<h2>Projected Cashflow (10 Years)</h2>
+<canvas id="cashChart" height="120"></canvas>
+</section>
+
+<!-- RISK -->
+<section>
+<h2>Operational & Market Risk</h2>
+<div class="grid">
+<div class="card">
+<h3>Raw Material Volatility</h3>
+<p>Fluctuation in sulfur prices may impact margins.</p>
+</div>
+<div class="card">
+<h3>Environmental Compliance</h3>
+<p>Strict emission regulation compliance required.</p>
+</div>
+<div class="card">
+<h3>Equipment Downtime</h3>
+<p>Scheduled maintenance critical for stability.</p>
+</div>
+</div>
+</section>
+
+<!-- CONCLUSION -->
+<section>
+<h2>Conclusion</h2>
+<p>
+Based on financial modeling, thermodynamic efficiency,
+and industrial benchmarking, the Amora Ventures sulfuric acid
+plant project demonstrates long-term feasibility with stable ROI.
+</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p class="footer-team">
+Team Members: <strong>Jovita • Aisha • Keysha</strong>
+</p>
+<p>© 2026 Amora Ventures – Academic Industrial Simulation</p>
+</footer>
+
+<!-- JS GRAPH -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+const ctx = document.getElementById('bepChart');
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['0%','25%','50%','75%','100%'],
+        datasets: [{
+            label: 'Revenue vs Cost',
+            data: [0,200,400,550,660],
+            borderColor:'#ff4f75',
+            tension:0.4
+        }]
+    }
+});
+
+const ctx2 = document.getElementById('cashChart');
+new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels:['Year1','Year2','Year3','Year4','Year5'],
+        datasets:[{
+            label:'Net Cashflow (Billion IDR)',
+            data:[109,109,109,109,109],
+            backgroundColor:'#ff4f75'
+        }]
+    }
+});
+
+</script>
+
+</body>
+</html>
